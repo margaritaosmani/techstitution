@@ -1,0 +1,223 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"> </script>
+
+  <script>
+    $(document).ready(function() {
+          $('#formular').validate({
+              rules: {
+                entiteti: {
+                  required: true
+                },
+                numri_regjis: {
+                  required: true,
+                  number: true,
+                  minlength: 7
+                },
+				fiskal: {
+                  required: true,
+				  number: true
+                },
+				adresa: {
+                  required: true,
+                },
+				tel: {
+                  required: true,
+				  number: true,
+                },
+				fax: {
+                  required: true
+                },
+				email: {
+                  required: true
+                },
+				pershkrim: {
+                  required: true
+                },
+              },
+              messages: {
+                entiteti: {
+				required: "Ju lutem shkruani nje emer valid."
+				},
+
+				numri_regjis: {
+				required: "Ju lutem shkruani nje numer valid."
+				},
+
+                fiskal: {
+				required: "Ju lutem shkruani nje numer valid."
+				},
+
+				adresa: {
+				required: "Ju lutem shkruani nje adrese valide."
+				},
+
+				tel: {
+				required: "Ju lutem shkruani nje numer telefoni valid."
+				},
+
+				fax: {
+				required: "Ju lutem shkruani nje numer faksi valid."
+				},
+
+				email: {
+				required: "Ju lutem shkruani nje email valide."
+				},
+				pershkrim: {
+				required: "Ju lutem shkruani nje pershkrim valid."
+				}
+              }
+
+            });
+
+          });
+  </script>
+</head>
+<body>
+  <h1>FORMULAR I NJOFTIMIT</h1>
+  <div class="info">
+    <p> për <br>
+      Hyrje në aktivitetin e Komunikimeve Elektronike
+    </p>
+  </div>
+  <form  method="post" id="formular">
+    <h3>Autoriteti do të procedoj me shqyrtimin e Formularit të Njoftimit vetëm pas kompletimit të Dosjes dhe do ta njoftoj ndërmarrësin për vendosjen në Regjistrin e Njoftimit brenda 5 (pesë) ditëve të punës nga data e kompletimit të Njoftimit.</h3>
+    <div class="contentform">
+
+      <div class="form-group">
+        <!-- Part 1 starts-->
+        <legend>
+          <p> <span class="number"> I </span> QELLIMI I NJOFTIMIT <span>*</span></p>
+        </legend>
+        <select id="qellimi" name="qellimi_njoftimit" required>
+          <option value="fillim_sherbimi">Fillimi i shërbimit</option>
+          <option value="shtim_sherbimi"> Shtim shërbimi</option>
+          <option value="heqje_sherbimi">Heqje shërbimi</option>
+        </select>
+      </div>
+      <!-- Part 1 ends-->
+      <div class="leftcontact">
+        <!-- Part 2 starts-->
+        <legend> <span class="number">II </span> TË DHËNAT PËR NDËRMARRËSIN:</legend>
+        <div class="form-group">
+          <label for="entiteti">
+            <p>1.1. Emri i Ndërmarrësit (Entiteti)<span>*</span></p>
+          </label>
+          <span class="icon-case"></span>
+          <input type="text" name="entiteti" id="entiteti" />
+        </div>
+        <!-- Part 2 ends-->
+        <div class="form-group">
+          <!-- Part 3 starts-->
+          <p>1.2 Numri i Regjistrimit të Biznesit <span>*</span></p>
+          <span class="icon-case"></span>
+          <input type="text" name="numri_regjis" id="numri_regjis" />
+       </div>
+        <!-- Part 3 ends-->
+        <div class="form-group">
+          <!-- Part 4 starts-->
+          <p>1.3 Numri fiskal<span>*</span></p>
+          <span class="icon-case"></span>
+          <input type="text" name="fiskal" id="fiskal" />
+        </div>
+        <!-- Part 4 ends-->
+        <div class="form-group">
+          <!-- Part 5 starts-->
+          <p>1.4 Adresa <span>*</span></p>
+          <span class="icon-case"></span>
+          <input type="text" name="adresa" id="adresa" />
+        </div>
+        <!-- Part 5 ends-->
+        <div class="form-group">
+          <!-- Part 6 starts-->
+          <p>1.5 Numri i Telefonit <span>*</span></p>
+          <span class="icon-case"></span>
+          <input type="text" name="tel" id="tel" />
+        </div>
+        <!-- Part 6 ends-->
+        <div class="form-group">
+          <!-- Part 7 starts-->
+          <p>1.6 Numri i Faksit <span>*</span></p>
+          <span class="icon-case"></span>
+          <input type="text" name="fax" id="fax" />
+        </div>
+        <!-- Part 7 ends-->
+        <div class="rightcontact">
+          <!-- Part 8 starts-->
+          <div class="form-group">
+            <p>1.7 E-mail adresa <span>*</span></p>
+            <span class="icon-case"></span>
+            <input type="email" name="email" id="email" />
+          </div>
+          <!-- Part 8 ends-->
+          <div class="form-group">
+            <!-- Part 9 starts-->
+            <legend> <span class="number">III </span> AKTIVITETET TË CILAT NJOFTOHEN/CREGJISTROHEN:</legend>
+            <p>1. Ofrimi i rrjetit publik fiks <span>*</span></p>
+            <select id="rrjeti" name="rrjeti_publik" required>
+              <option value="lokal">Lokal</option>
+              <option value="nacional">Nacional</option>
+              <option value="tjera">Tjera(specifikoj)</option>
+            </select>
+          </div>
+          <!-- Part 9 ends-->
+          <div class="form-group">
+            <!-- Part 10 starts-->
+            <p>2. Ofrimi i shërbimeve publike fikse<span>*</span></p>
+            <select id="sherbime" name="sherbime_publike" required>
+              <option value="lokale_nacionale">Shërbime telefonike lokale/nacionale</option>
+              <option value="nderkombetare">Shërbime telefonike ndërkombëtare</option>
+              <option value="publik">Telefona publik me pagesë</option>
+              <option value="sherbime_tjera">Shërbime tjera (specifikoj)</option>
+            </select>
+          </div>
+        </div>
+        <!-- Part 10 ends-->
+        <div class="form-group">
+          <!-- Part 11 starts-->
+          <p>3. Ofrimi i rrjetit publik mobil
+            <span>*</span>
+          </p>
+          <select id="rrjeti_publik" name="rrjeti_publik" required>
+            <option value="rrjeti_lokal">Lokal</option>
+            <option value="rrjeti_nacional">Nacional</option>
+          </select>
+        </div>
+      </div>
+      <!-- Part 11 ends-->
+      <div class="form-group">
+        <!-- Part 12 starts-->
+        <legend><span class="number">IV</span> PËRSHKRIMI I AKTIVITETIT DHE FAZA E OFRIMIT:</legend>
+        <p>Përshkrimi i rrjetit dhe/ose shërbimit që do të ofrohet:<span>*</span></p>
+        <span class="icon-case"></span>
+        <textarea name="pershkrim" rows="14"></textarea>
+      </div>
+      <!-- Part 12 ends-->
+      <div class="form-group">
+        <!-- Part 13 starts-->
+        <legend>
+          <p><span class="number">V</span> KONFIRMIMI I NJOFTIMIT:
+            <span>*</span>
+          </p>
+        </legend>
+        <p>Ndërmarrja kërkon që t’i lëshohet certifikata e konfirmimit të njoftimit për ofrimin e shërbimeve publike: </p>
+        <select id="konfirmim" name="konfirmim" required>
+          <option value="rrjeti_lokal">Po</option>
+          <option value="rrjeti_nacional">Jo</option>
+        </select>
+      </div>
+    </div>
+    <!-- Part 13 ends-->
+    </div>
+    </div>
+    <button type="submit" class="button-contact">Dergo</button>
+  </form>
+  <footer>
+    <p> Adresa: Qyteza Pejton, Rr. Mujo Ulqinaku nr. 7, 10 000 Prishtinë, Republika e Kosovës <br>
+      Tel: + 381 (38) 212-345; Fax: + 381 (38) 212 399; <br>
+      E-mail: info@arkep-rks.org; web-site: www.arkep-rks.org
+    <p>
+  </footer>
+</body>
+</html>
