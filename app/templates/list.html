@@ -1,27 +1,52 @@
 {% extends 'layout.html' %}
+<style>
+th {
+  color: #fff;;
+  background:#81BDA4;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+  font-family: 'Open Sans', sans-serif;
+}
+
+td {
+  color: #666;
+  background:#eaeaea;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+  font-family: 'Open Sans', sans-serif;
+}
+</style>
 {% block header %}
   <h4 class="center-align" style="margin-bottom:30px">Ndermarresit</h4>
 {% endblock %}
 {% block content%}
 <div class="card-panel">
-  <table align="center" class="highlight bordered responsive-table" style="border: 2px solid #81BDA4; width: 850px;">
+  <table align="center" class="highlight bordered responsive-table" style="width: 100%;">
   <thead>
     <tr>
-      <th style="border: 2px solid #81BDA4;">Emri i Ndermarresit</th>
-      <th style="border: 2px solid #81BDA4;">Adresa</th>
-      <th style="border: 2px solid #81BDA4;">Opsionet</th>
+      <th>Emri i Ndermarresit</th>
+      <th>Adresa</th>
+      <th>Opsionet</th>
     </tr>
   </thead>
   <tbody>
   {% for record in myCursor %}
   <tr class="item-row">
-    <td style="border: 2px solid #81BDA4;">
+    <td>
       {{ record['entiteti'] }}
     </td>
-    <td style="border: 2px solid #81BDA4;">
+    <td>
       {{ record['adresa'] }}
     </td>
-    <td style="border: 2px solid #81BDA4;">
+    <td>
       <a class="" href="{{url_for('main.get_doc',id=record._id)}}">View</a>/
       <a href="{{url_for('.delete_document', id=record._id)}}">Remove</a>
     </td>
