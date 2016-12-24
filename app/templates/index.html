@@ -7,27 +7,24 @@
     $(document).ready(function() {
           $('#formular').validate({
               rules: {
-                entiteti: {
+                               entiteti: {
                   required: true
                 },
-                numri_regjis: {
+                               numri_regjis: {
                   required: true,
                   number: true,
                   minlength: 7
                 },
 				fiskal: {
-                  required: true,
-				  number: true
+		 required: true,			
+		 number: true
                 },
 				adresa: {
-                  required: true,
+                 required: true
                 },
 				tel: {
                   required: true,
-				  number: true,
-                },
-				fax: {
-                  required: true
+	          number: true
                 },
 				email: {
                   required: true
@@ -36,35 +33,31 @@
                   required: true
                 },
               },
-              messages: {
-                entiteti: {
+              messages: { entiteti: {
 				required: "Ju lutem shkruani nje emer valid."
 				},
 
-				numri_regjis: {
+		          numri_regjis: {
 				required: "Ju lutem shkruani nje numer valid."
 				},
 
-                fiskal: {
+                          fiskal: {
 				required: "Ju lutem shkruani nje numer valid."
 				},
 
-				adresa: {
+			  adresa: {
 				required: "Ju lutem shkruani nje adrese valide."
 				},
 
-				tel: {
+			  tel: {
 				required: "Ju lutem shkruani nje numer telefoni valid."
 				},
 
-				fax: {
-				required: "Ju lutem shkruani nje numer faksi valid."
-				},
-
-				email: {
+		          email: {
 				required: "Ju lutem shkruani nje email valide."
 				},
-				pershkrim: {
+			 
+			  pershkrim: {
 				required: "Ju lutem shkruani nje pershkrim valid."
 				}
               }
